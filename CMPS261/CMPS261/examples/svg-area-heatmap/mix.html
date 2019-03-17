@@ -1,0 +1,105 @@
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="lib/esl.js"></script>
+        <script src="lib/config.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+        <style>
+            html, body, #main {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+        <div id="main"></div>
+        <script>
+
+            require([
+                'echarts'
+                // 'echarts/chart/line',
+                // 'echarts/chart/bar',
+                // 'echarts/component/legend',
+                // 'echarts/component/grid',
+                // 'echarts/component/tooltip'
+            ], function (echarts) {
+
+                var chart = echarts.init(document.getElementById('main'), null, {
+
+                });
+
+                chart.setOption({
+                    tooltip : {
+                        trigger: 'axis'
+                    },
+                    legend: {
+                        data:['女性Female','男性Male','总人数Sum']
+                    },
+                    xAxis : [
+                        {
+                            type : 'category',
+                            data : ['0岁', '1岁', '2岁', '3岁', '4岁', '5岁', '6岁', '7岁', '8岁', '9岁', '10岁', '11岁', '12岁', '13岁', '14岁', '15岁', '16岁', '17岁', '18岁', '19岁', '20岁', '21岁', '22岁', '23岁', '24岁', '25岁', '26岁', '27岁', '28岁', '29岁', '30岁', '31岁', '32岁', '33岁', '34岁', '35岁', '36岁', '37岁', '38岁', '39岁', '40岁', '41岁', '42岁', '43岁', '44岁', '45岁', '46岁', '47岁', '48岁', '49岁', '50岁', '51岁', '52岁', '53岁', '54岁', '55岁', '56岁', '57岁', '58岁', '59岁', '60岁', '61岁', '62岁', '63岁', '64岁', '65岁', '66岁', '67岁', '68岁', '69岁', '70岁', '71岁', '72岁', '73岁', '74岁', '75岁', '76岁', '77岁', '78岁', '79岁', '80岁', '81岁', '82岁', '83岁', '84岁', '85岁', '86岁', '87岁', '88岁', '89岁', '90岁', '91岁', '92岁', '93岁', '94岁', '95岁', '96岁', '97岁', '98岁', '99岁']
+                        }
+                    ],
+                    yAxis : [
+                        {
+                            type : 'value',
+                            name : 'number for sex',
+                            axisLabel : {
+                                formatter: '{value} '
+                            }
+                        },
+                        {
+                            type : 'value',
+                            name : 'number for the whole',
+                            position: 'right',
+                            axisLabel : {
+                                formatter: '{value} '
+                            }
+                        }
+                    ],
+                    series : [
+
+                        {
+                            name:'女性Female',
+                            type:'bar',
+                            data:[0, 0, 5946, 6640, 5392, 4995, 4274, 3345, 3169, 2691, 3571, 2523, 3715, 3480, 3931, 5752, 7355, 10006, 15292, 17209, 39990, 37140, 49013, 54858, 47881, 50659, 38653, 31571, 37336, 22559, 33512, 14268, 18504, 15006, 12162, 17445, 14038, 10140, 13329, 9527, 20051, 6989, 10374, 8675, 6896, 14180, 10168, 9406, 10115, 4512, 11141, 3570, 6369, 6406, 5355, 8363, 5772, 3808, 4728, 2454, 6530, 1914, 2484, 2473, 1792, 2981, 1704, 1452, 1690, 1115, 3087, 858, 1486, 1231, 1180, 1547, 1153, 764, 1116, 499, 1443, 381, 546, 472, 356, 454, 298, 211, 203, 110, 259, 67, 54, 50, 39, 43, 34, 25, 21, 17]
+                        },
+                        {
+                            name:'男性Male',
+                            type:'bar',
+                            data:[0, 0, 7750, 8731, 6972, 7396, 5912, 5014, 4499, 3749, 4566, 3059, 4271, 4045, 4512, 6725, 8190, 11770, 16867, 15874, 29081, 24258, 30848, 33028, 25840, 28921, 20597, 16078, 21036, 11926, 21469, 8667, 12528, 10775, 7973, 12864, 10259, 7022, 9074, 6611, 15855, 5375, 7903, 6595, 5018, 11532, 7621, 6711, 7674, 3037, 9251, 2750, 5144, 4873, 4397, 7633, 5313, 3577, 4635, 2607, 6788, 1911, 2606, 2421, 1849, 3260, 1806, 1589, 1733, 1161, 3183, 904, 1463, 1327, 1137, 1587, 1145, 717, 1134, 514, 1477, 390, 535, 461, 304, 441, 273, 181, 177, 92, 239, 37, 54, 51, 38, 35, 17, 26, 16, 24]
+                        },
+                        {
+                            name:'总人数Sum',
+                            type:'line',
+                            yAxisIndex: 1,
+                            data:[0, 0, 13696, 15371, 12364, 12391, 10186, 8359, 7668, 6440, 8137, 5582, 7986, 7525, 8443, 12477, 15545, 21776, 32159, 33083, 69071, 61398, 79861, 87886, 73721, 79580, 59250, 47649, 58372, 34485, 54981, 22935, 31032, 25781, 20135, 30309, 24297, 17162, 22403, 16138, 35906, 12364, 18277, 15270, 11914, 25712, 17789, 16117, 17789, 7549, 20392, 6320, 11513, 11279, 9752, 15996, 11085, 7385, 9363, 5061, 13318, 3825, 5090, 4894, 3641, 6241, 3510, 3041, 3423, 2276, 6270, 1762, 2949, 2558, 2317, 3134, 2298, 1481, 2250, 1013, 2920, 771, 1081, 933, 660, 895, 571, 392, 380, 202, 498, 104, 108, 101, 77, 78, 51, 51, 37, 41]
+                        }
+                    ]
+                });
+            })
+
+        </script>
+    </body>
+</html>
