@@ -77,7 +77,7 @@ function createLangHeader(info) {
 
 function createLink(bodyPart, className){
     // $('table').append($('<tr class="wiki-style" ><td colspan="2"><a href="https://en.wikipedia.org/wiki/' + translations["english"]["wiki"][bodyPart] + '"target="_blank" class="' + className + '"rel="noopener noreferrer">English Wikipedia</a></td></tr>'));
-    $('table').append($('<tr class="wiki-style" ><td colspan="2"><a href="file:///Users/zekunzhao/venv/Git/Virsul/CMPS261/examples/svg-area-heatmap/dataset-layout.html' +'"rel="noopener noreferrer">Analysis</a></td></tr>'));
+    $('table').append($('<tr class="wiki-style" ><td colspan="2"><a href="./dataset-layout.html' +'"rel="noopener noreferrer">Analysis</a></td></tr>'));
 }
 
 initialize();
